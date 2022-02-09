@@ -76,7 +76,7 @@ def New_preprocessing(TimeSeries):
    while next+(num_periods_input)<end:
         next=start+num_periods_input
         x_batches.append(Train[start:next,:])
-        y_batches.append(Train[next:next+num_periods_output,0])
+        y_batches.append(Train[next+1:next+num_periods_output,0])
         start=start+1
    y_batches=np.asarray(y_batches)
    y_batches = y_batches.reshape(-1, num_periods_output, 1) 
